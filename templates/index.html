@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Prediction</title>
+    <style>
+        body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #e6e7ee;
+}
+.flask-input{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    box-shadow:    7px 7px 7px #d2d2d2,
+    -7px -7px 7px white;
+}
+form{
+    width: 100%;
+}
+.lang select{
+    padding: 0.5rem 2rem;
+    background-color: #e6e7ee;
+    box-shadow: 7px 7px 7px #d2d2d2,
+    -7px -7px 7px white;
+    outline: none;
+    border: none;
+}
+.container div select{
+    padding: 0.5rem 2rem;
+    height: 3rem;
+    background-color: #e6e7ee;
+    box-shadow: inset 7px 7px 7px #d2d2d2,
+    inset -7px -7px 7px white;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+}
+.lang select option{
+    background-color: #e6e7ee;
+    box-shadow:    7px 7px 7px #d2d2d2,
+    -7px -7px 7px white;
+    height: 1rem;
+
+}
+.label{
+    font-family: "Nunito Sans",sans-serif;
+    font-size: large;
+    margin-top: 1rem;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.flask-input form div{
+    width: 40%;
+}
+.labels{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.labels input{
+    border: none;
+    outline: none;
+    margin-top: 0.5rem;
+    height: 2.5rem;
+    font-size: medium;
+    padding-left: 1rem;
+    font-weight: 600;
+    background-color: #e6e7ee;
+    box-shadow:  inset  7px 7px 7px #d2d2d2,
+    inset  -7px -7px 7px white;
+}
+form button{
+    text-align: center;
+    border-radius: 5px;
+    background-color: #e6e7ee;
+    border: none;
+    box-shadow:  7px 7px 7px #d2d2d2,
+    -7px -7px 7px #ffffff;
+    font-size: medium;
+    padding: 1rem 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+form button:hover{
+    box-shadow:  inset  7px 7px 7px #d2d2d2,
+    inset  -7px -7px 7px white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="flask-input">
+        <center><h1>Laptop Price Prediction</h1></center>
+        <form action="\home" method="post">
+            <section class="lang">
+                <select name="language" id="language">
+                    <option onchange="changeLanguage()" value="English">English</option>
+                    <option onchange="changeLanguage()" value="Hindi">Hindi</option>
+                </select>
+            </section>
+            <section class="container">
+                <div>
+                    <section class="labels">
+                    <label for="" class="label">Company</label>
+                    <select name="company">
+                        <option value=""></option>
+                        <option value="Asus">Asus</option>
+                        <option value="Dell">Dell</option>
+                    </select>
+                </section>
+                <section class="labels">
+                    <label for="" class="label">TypeName</label>
+                    <select name="TypeName">
+                        <option value=""></option>
+                        <option value="Notebook">Notebook</option>
+                        <option value="Gamming">Gamming</option>
+                    </select>
+                </section>
+                <section class="labels">
+                    <label for="" class="label">Inches</label>
+                    <input type="text" name="Inches">
+                </section>
+                <section class="labels">
+                    <label for="" class="label">ScreenResolution</label>
+                    <input type="text" name="ScreenResolution">
+                </section>
+            <section class="labels">
+                <label for="" class="label">Cpu</label>
+                <select name="Cpu">
+                    <option value=""></option>
+                    <option value="Intel Core i5">Intel Core i5</option>
+                    <option value="Intel Core i7">Intel Core i7</option>
+                </select>
+            </section>
+            <section class="labels">
+                <label for="" class="label">Ram</label>
+                    <select name="Ram">
+                        <option value=""></option>
+                        <option value="16">16GB</option>
+                        <option value="8">8GB</option>
+                    </select>
+            </section>
+        </div>
+        <div>
+            <section class="labels">
+                <label for="" class="label">HDD</label>
+                <select name="HDD">
+                    <option value=""></option>
+                    <option value="512">512GB</option>
+                    <option value="1">1TB</option>
+                </select>
+            </section>
+
+            <section class="labels">
+                <label for="" class="label">SSD</label>
+                <select name="SSD">
+                    <option value=""></option>
+                    <option value="512">512GB</option>
+                    <option value="1">1TB</option>
+                </select>
+            </section>
+            <section class="labels">
+                <label for="" class="label">Gpu</label>
+                <select name="Gpu">
+                    <option value=""></option>
+                    <option value="Intel">Intel</option>
+                    <option value="Nvidia">Nvidia</option>
+                </select>
+            </section>
+            <section class="labels">
+                <label for="" class="label">OpSys</label>
+                <select name="OpSys">
+                    <option value=""></option>
+                    <option value="Windows">Windows</option>
+                    <option value="Linux">Linux</option>
+                </select>
+            </section>
+            <section class="labels">
+                <label for="" class="label">Weight</label>
+                <input type="text" name="Weight">
+            </section>
+            <section class="labels">
+                <label for="" class="label">TouchScreen</label>
+                <select name="TouchScreen">
+                    <option value=""></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </section>
+            <section class="labels">
+                <label for="" class="label">IPS</label>
+                <select name="ips">
+                    <option value=""></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </section>
+        </div>
+    </section>
+    <center style="margin-top: 2rem;">
+        <button type="submit">Submit</button>
+    </center>
+        </form>
+    </div>
+
+  
+
+</body>
+<script>
+    const English = ['Company', 'TypeName', 'Inches', 'ScreenResolution', 'Cpu', 'Ram','HDD','SDD', 'Gpu', 'OpSys', 'Weight','TouchScreen','IPS'];
+    const Hindi = ['कंपनी','प्रकार','इंच','स्क्रीन संकल्प','सी.पी.यू','रैम','एचडीडी','एसएसडी','जी.पी.यू','ऑपरेटिंग सिस्टम','वज़न','टच स्क्रीन','आईपीएस']
+    let lang = document.getElementById("language")
+    function changeLanguage(value) {
+        let features = document.querySelectorAll('.label');   
+        if (value==="English"){
+            for (let index = 0; index < English.length; index++) {
+                features[index].innerHTML = English[index]
+            }
+        }else{
+            for (let index = 0; index < Hindi.length; index++) {
+                features[index].innerHTML = Hindi[index]
+            }
+        }
+    }
+    lang.addEventListener('change', function() {
+        console.log('You selected: ', this.value);
+        changeLanguage(this.value)
+        });
+
+</script>
+</html>
